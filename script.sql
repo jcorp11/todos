@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS todos;
+DROP TABLE IF EXISTS users;
+-- Crear tabla "users"
+CREATE TABLE users (
+user_id SERIAL PRIMARY KEY,
+email VARCHAR(100) NOT NULL UNIQUE,
+password VARCHAR(300) NOT NULL
+);
+-- crear tabla todos
+CREATE TABLE todos (
+id SERIAL PRIMARY KEY,
+title VARCHAR(255) NOT NULL,
+done BOOLEAN NOT NULL DEFAULT false,
+user_id INT NOT NULL REFERENCES users(user_id) ON DELETE CASCADE
+);

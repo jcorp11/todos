@@ -1,0 +1,1 @@
+postgres://db_latam_if4w_user:VIHNNzluQoAlr2A05qd7Nxcw6g92wF8v@dpg-cojfdgol6cac73b2jsng-a.oregon-postgres.render.com/db_latam_if4w 
