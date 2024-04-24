@@ -1,13 +1,13 @@
 import request from "supertest";
 import { app } from "../index.js";
 
-// describe("GET /", () => {
-//   it("responds with json", async () => {
-//     const response = await request(app).get("/");
-//     expect(response.statusCode).toBe(200);
-//     expect(response.body).toEqual({ message: "Welcome to my API" });
-//   });
-// });
+describe("GET /", () => {
+  it("responds with json", async () => {
+    const response = await request(app).get("/");
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual({ message: "Welcome to my API" });
+  });
+});
 
 describe("POST /users/login and GET /todos with token", () => {
   let token = "";
