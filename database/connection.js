@@ -4,26 +4,26 @@ const { Pool } = pkg;
 
 const connectionString = process.env.PG_STRING_URL;
 // cambia los datos de acuerdo a tu configuración de postgres
-// export const pool = new Pool({
-//   user: process.env.PGUSER,
-//   host: process.env.PGHOST,
-//   database: process.env.PGDATABASE,
-//   password: process.env.PGPASSWORD,
-//   port: process.env.PGPORT,
-//   allowExitOnIdle: true,
-// });
+export const pool = new Pool({
+  user: process.env.PGUSER,
+  host: process.env.PGHOST,
+  database: process.env.PGDATABASE,
+  password: process.env.PGPASSWORD,
+  port: process.env.PGPORT,
+  allowExitOnIdle: true,
+});
 
-export const pool = connectionString
-  ? new Pool({
-      connectionString,
-      ssl: {
-        rejectUnauthorized: false,
-      },
-      allowExitOnIdle: true,
-    })
-  : new Pool({
-      allowExitOnIdle: true,
-    });
+// export const pool = connectionString
+//   ? new Pool({
+//       connectionString,
+//       ssl: {
+//         rejectUnauthorized: false,
+//       },
+//       allowExitOnIdle: true,
+//     })
+//   : new Pool({
+//       allowExitOnIdle: true,
+//     });
 try {
   await pool.query("SELECT NOW()");
   console.log("Database connected");
